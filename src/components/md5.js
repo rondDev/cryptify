@@ -12,6 +12,7 @@ export default function Md5() {
     }
 
     return (<div>
+        <h2>MD5</h2>
         <Input onInputChange={handleChange} value={inputValue} />
         <Output value={outputValue} />
     </div>);

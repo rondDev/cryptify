@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Input, Output } from "./textfields";
+import { Toggle } from "./toggle";
 
 export default function Uppercase() {
     const [inputValue, setInputValue] = useState('');
@@ -16,8 +17,19 @@ export default function Uppercase() {
         }
     }
 
+    const handleToggle = () => {
+        setUppercase(!uppercase);
+        let temp = inputValue;
+        setInputValue(outputValue);
+        setOutputValue(temp);
+    }
+
+    
+
     return (<div>
+        <h2>Uppercase</h2>
         <Input onInputChange={handleChange} value={inputValue} />
         <Output value={outputValue} />
+        <Toggle  onInputChange={handleToggle}  title={uppercase ? 'Uppercase' : 'Lowercase'} />
     </div>);
 }

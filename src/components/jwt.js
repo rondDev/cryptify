@@ -12,6 +12,7 @@ export default function Jwt() {
     }
 
     return (<div>
+        <h2>JSON Web Token</h2>
         <Input onInputChange={handleChange} value={inputValue} />
         <Output value={outputValue} />
     </div>);

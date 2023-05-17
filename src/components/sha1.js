@@ -12,6 +12,7 @@ export default function Sha1() {
     }
 
     return (<div>
+        <h2>SHA1</h2>
         <Input onInputChange={handleChange} value={inputValue} />
         <Output value={outputValue} />
     </div>);

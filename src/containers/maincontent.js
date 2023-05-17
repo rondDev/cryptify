@@ -75,28 +75,28 @@ export default function MainContent(props){
             :
             <div className="itemArea">
                 <div className="base64 iconContainer pointer"  onClick={() => select('base64')}>
-                    <Image className="icons" src={base64}/>   
+                    <Image className="icons" src={base64} alt="Number 64 icon inside border indicating base64"/>   
                     <div>
                         <h3>Base 64</h3>
                         <p><span>Encode and decode</span>Base64 data</p>
                     </div>
                 </div>
                 <div className="hex iconContainer pointer"  onClick={() => select('hex')}>
-                    <Image className="icons" src={HEX}/>   
+                    <Image className="icons" src={HEX} alt="A hashtag icon inside a border for hex"/>   
                     <div>
                         <h3>Hex</h3>
                         <p><span>Converting value</span>between Hex and text</p>
                     </div>
                 </div>
                 <div className="md5 iconContainer pointer"  onClick={() => select('md5')}>
-                    <Image className="icons" src={MD5}/> 
+                    <Image className="icons" src={MD5} alt="A fingerprint icon inside border for md5"/> 
                     <div>  
                         <h3>MD5</h3>
                         <p><span>Hash and dehash</span>MD5 data</p>
                     </div>
                 </div>
                 <div className="sha1 iconContainer pointer"  onClick={() => select('sha1')}>
-                    <Image className="icons" src={SHA1}/>   
+                    <Image className="icons" src={SHA1} alt="Lock icon inside border"/>   
                     <div>
                         <h3>SHA1</h3>
                         <p><span>Hash and dehash</span>SHA1 data</p>

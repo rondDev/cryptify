@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Input, Output } from "./textfields";
+import { Toggle } from "./toggle";
 
 export default function Hex() {
     const [inputValue, setInputValue] = useState('');
     const [outputValue, setOutputValue] = useState('');
-    const [fromToggle, setFromToggle] = useState(true);
+    const [fromToggle, setFromToggle] = useState(false);
 
     const handleChange = (textInput) => {
         setInputValue(textInput);
@@ -16,9 +17,20 @@ export default function Hex() {
         }
     }
 
+    
+
+    const handleToggle = () => {
+        setFromToggle(!fromToggle);
+        let temp = inputValue;
+        setInputValue(outputValue);
+        setOutputValue(temp);
+    }
+
     return (<div>
+        <h2>Hex</h2>
         <Input onInputChange={handleChange} value={inputValue} />
         <Output value={outputValue} />
+        <Toggle onInputChange={handleToggle} title={fromToggle ? 'Hex > Text' : 'Text > Hex'} />
     </div>);
 }
 

@@ -11,6 +11,7 @@ export default function Whitespace() {
     }
 
     return (<div>
+        <h2>Whitespace</h2>
         <Input onInputChange={handleChange} value={inputValue} />
         <Output value={outputValue} />
     </div>);
