@@ -2,7 +2,8 @@
 // Credit also goes to my mate Fülöp.
 
 // 1. Create singletons via createGlobalState()
-export const selectedState = createGlobalState('');
+// ##################################
+import { useState, useEffect } from 'react';
 
 // 2. Then in the components: import those states you need there.
 //    If you need re-render on state change then employ useGlobalState.
@@ -23,7 +24,6 @@ function createGlobalState(initState = null) {
       if (newState === this.data.state) return;
       this.data.state = newState;
       this.data.reRenderFns.forEach((reRender) => reRender());
-      return this;
     },
 
     joinReRender(reRender) {
@@ -33,16 +33,13 @@ function createGlobalState(initState = null) {
 
     cancelReRender(reRender) {
       this.data.reRenderFns = this.data.reRenderFns.filter(
-        (reRenderFn) => reRenderFn !== reRender
+        (reRenderFn) => reRenderFn !== reRender,
       );
     },
   };
 
   return Object.freeze(Object.create(prototype));
 }
-
-// ##################################
-import { useState, useEffect } from "react";
 
 export default function useGlobalState(globalState) {
   const [, set] = useState(globalState.get());
@@ -62,3 +59,5 @@ export default function useGlobalState(globalState) {
 
   return [state, setState];
 }
+
+export const selectedState = createGlobalState('');
