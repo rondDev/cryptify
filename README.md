@@ -1,4 +1,4 @@
-Basic little conversion tool.
+Basic conversion tool.
 
 ![Home page](https://rond.cc/u/3fjHDyDBafYm.png)
 
