@@ -4,7 +4,7 @@ const nextConfig = {
 
     output: "export",
 
-    basePath: "/cryptify",
+    basePath: process.env.NODE_ENV === "production" ? "/cryptify" : "",
 
     images: {
         unoptomized: true,
