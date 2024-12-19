@@ -7,7 +7,7 @@ const nextConfig = {
     basePath: process.env.NODE_ENV === "production" ? "/cryptify" : "",
 
     images: {
-        unoptomized: true,
+        unoptimized: true,
     },
 };
 
